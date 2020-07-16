@@ -70,3 +70,28 @@ function addStyleInsertLink(){
 function addStyleBackground(){
 	$("#w3review").css("background","red");
 }
+
+   function themeSetBack(setBack){
+      var bodyColor = $(".them-"+setBack.toString()).css("background-image");
+      $("#tab-3").css('background-image',bodyColor);
+    }
+
+    function themeSetTextEditor(setBack){
+      var bodyColor = $(".them-text-editor-"+setBack.toString()).css("background-image");
+      $("div#w3review").css('background-image',bodyColor);
+    }
+
+        $.ajax({       
+          type: "GET",
+          url: "/selectThemes",
+          success: function(result){
+
+            for(var i=0;i<result.length;i++){
+              $(".themes-list-text-editor").append("<div class='theme-list-test-element them-text-editor-"+result[i][0]+"' onclick='themeSetTextEditor("+result[i][0]+")' style='"+result[i][1]+"'> </div>")
+              $(".themes-list").append("<div class='theme-element them-"+result[i][0]+"' onclick='themeSetBack("+result[i][0]+")' style='"+result[i][1]+"'> </div>")
+            }
+               
+                
+            console.log(result);
+          }
+        });

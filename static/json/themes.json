@@ -1,0 +1,16 @@
+{
+"themes":[
+    {
+    "id":"click_cover_pic",
+    "background" : "<div class='img_back movdiv' id='id_2' /></div>"
+  },
+  {
+    "classToClick":"click_profile_pic",
+    "divToSpawn" : "<div class='img_profile movdiv' id='id_1' /></div>"
+  },
+  {
+    "classToClick":"click_rectangle",
+    "divToSpawn" : "<div class='rectangle_move movdiv' id='id_4' /></div>"
+  }
+]
+}
